@@ -1,17 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import { services } from "@/config/site";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function Services() {
+  const { t } = useI18n();
+  const s = t.services;
   return (
     <section id="services" className="section" aria-labelledby="titre-services">
       <div className="container">
         <div className="section-head">
-          <p className="eyebrow eyebrow-dark">Services</p>
-          <h2 id="titre-services">Un trajet, selon votre besoin</h2>
-          <p className="section-intro">
-            Trois façons de vous déplacer sans contrainte, avec un chauffeur
-            qui s’adapte à votre programme.
-          </p>
+          <p className="eyebrow eyebrow-dark">{s.eyebrow}</p>
+          <h2 id="titre-services">{s.title}</h2>
+          <p className="section-intro">{s.intro}</p>
         </div>
 
         <div className="services-layout">
@@ -22,7 +24,7 @@ export default function Services() {
             >
               <Image
                 src={service.image.src}
-                alt={service.image.alt}
+                alt={s.items[service.id].alt}
                 width={service.image.width}
                 height={service.image.height}
                 sizes={
@@ -32,8 +34,8 @@ export default function Services() {
                 }
               />
               <div className="service-body">
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
+                <h3>{s.items[service.id].title}</h3>
+                <p>{s.items[service.id].text}</p>
               </div>
             </article>
           ))}
