@@ -1,7 +1,11 @@
+"use client";
+
 import { ExternalLink, Mail } from "lucide-react";
 import { developer } from "@/config/site";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function DeveloperSignature() {
+  const { t } = useI18n();
   const links = [
     { label: "GitHub", href: developer.githubUrl },
     { label: "LinkedIn", href: developer.linkedinUrl },
@@ -12,9 +16,9 @@ export default function DeveloperSignature() {
     <section className="dev" aria-labelledby="titre-dev">
       <div className="container dev-inner">
         <div>
-          <h2 id="titre-dev">Un site comme celui-ci pour votre activité ?</h2>
+          <h2 id="titre-dev">{t.dev.title}</h2>
           <p>
-            Réalisé par <strong>{developer.name}</strong> — {developer.baseline}
+            {t.dev.madeBy} <strong>{developer.name}</strong> — {t.dev.baseline}
           </p>
         </div>
         <ul className="dev-links">
@@ -27,7 +31,7 @@ export default function DeveloperSignature() {
             <li key={link.label}>
               <a href={link.href} target="_blank" rel="noopener noreferrer">
                 <ExternalLink aria-hidden="true" /> {link.label}
-                <span className="sr-only"> (s’ouvre dans un nouvel onglet)</span>
+                <span className="sr-only"> {t.dev.newTab}</span>
               </a>
             </li>
           ))}
