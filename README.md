@@ -23,11 +23,21 @@ npm run lint     # ESLint
 3. Laissez les réglages par défaut (framework Next.js détecté automatiquement). Aucune variable d’environnement n’est nécessaire.
 4. Cliquez sur **Deploy**. Chaque `git push` sur `main` redéploie le site.
 
+## Fonctionnalités
+
+- Navigation avec lien de section actif, menu mobile accessible au clavier, bouton « retour en haut ».
+- Sélecteur de langue FR / EN (français par défaut, choix mémorisé localement dans le navigateur).
+- Section « Comment ça marche » (étapes dans `src/i18n/messages.ts`).
+- Formulaire : inversion départ/destination, trajet retour optionnel, numéro de vol (transfert aéroport), options (`tripOptions`), validation détaillée.
+- Récapitulatif : copier dans le presse-papiers, imprimer, export agenda `.ics` (généré dans le navigateur, rien n’est envoyé).
+- Apparition progressive au défilement, désactivée si l’utilisateur préfère réduire les animations.
+
 ## Où modifier quoi
 
 | Besoin | Fichier |
 | --- | --- |
-| Textes, marque, services, véhicules, FAQ, suggestions de destinations | [src/config/site.ts](src/config/site.ts) |
+| Textes FR et EN (tous les contenus, FAQ, suggestions) | [src/i18n/messages.ts](src/i18n/messages.ts) |
+| Marque, véhicules, services (structure) | [src/config/site.ts](src/config/site.ts) |
 | Liens du développeur (e-mail, GitHub, LinkedIn, portfolio) | `developer` dans [src/config/site.ts](src/config/site.ts) |
 | Couleurs, typographie, espacements | variables `:root` de [src/app/globals.css](src/app/globals.css) |
 | Images | [public/images/](public/images) (puis `images` dans `site.ts`) |
