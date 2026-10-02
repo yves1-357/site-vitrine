@@ -2,6 +2,7 @@
 
 import { ExternalLink, Mail } from "lucide-react";
 import { developer } from "@/config/site";
+import ContactDialog from "./ContactDialog";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function DeveloperSignature() {
@@ -20,6 +21,7 @@ export default function DeveloperSignature() {
           <p>
             {t.dev.madeBy} <strong>{developer.name}</strong> — {t.dev.baseline}
           </p>
+          <ContactDialog />
         </div>
         <ul className="dev-links">
           <li>

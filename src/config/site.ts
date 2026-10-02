@@ -30,13 +30,13 @@ export type ImageAsset = {
 };
 
 export const images = {
-  hero: { src: "/images/hero.jpg", width: 1920, height: 2560 },
+  hero: { src: "/images/hero.jpg", width: 1400, height: 1867 },
   aeroport: { src: "/images/aeroport.jpg", width: 1280, height: 780 },
   professionnel: { src: "/images/professionnel.jpg", width: 1280, height: 960 },
   prive: { src: "/images/prive.jpg", width: 1200, height: 1600 },
-  berline: { src: "/images/berline.jpg", width: 1280, height: 852 },
-  "berline-premium": { src: "/images/berline-premium.jpg", width: 1280, height: 710 },
-  van: { src: "/images/van.jpg", width: 1280, height: 989 },
+  berline: { src: "/images/berline.jpg", width: 736, height: 1097 },
+  "berline-premium": { src: "/images/berline-premium.jpg", width: 736, height: 589 },
+  van: { src: "/images/van.jpg", width: 736, height: 736 },
 } satisfies Record<string, ImageAsset>;
 
 export type VehicleId = "berline" | "berline-premium" | "van";
@@ -74,30 +74,6 @@ export const imageCredits = [
     license: "CC BY 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
     url: "https://commons.wikimedia.org/wiki/File:Black_Mercedes-Benz_S-Class_on_Regent_Street_near_Piccadilly_Circus,_London_(Tripyana).jpg",
-  },
-  {
-    file: "berline.jpg",
-    title: "Škoda Superb IV IMG 4524",
-    author: "Alexander Migl",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    url: "https://commons.wikimedia.org/wiki/File:%C5%A0koda_Superb_IV_IMG_4524.jpg",
-  },
-  {
-    file: "berline-premium.jpg",
-    title: "Mercedes-Benz E-Class 1X7A5838",
-    author: "Alexander Migl",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    url: "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_E-Class_1X7A5838.jpg",
-  },
-  {
-    file: "van.jpg",
-    title: "Mercedes-Benz V-Class 185650",
-    author: "Trop86",
-    license: "CC0 1.0",
-    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
-    url: "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_V-Class_185650.jpg",
   },
   {
     file: "aeroport.jpg",

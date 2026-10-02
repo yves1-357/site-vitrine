@@ -54,9 +54,9 @@ Photographies de Wikimedia Commons, redimensionnées pour le web et conservées 
 | Fichier | Œuvre | Auteur | Licence |
 | --- | --- | --- | --- |
 | hero.jpg | [Black Mercedes-Benz S-Class on Regent Street](https://commons.wikimedia.org/wiki/File:Black_Mercedes-Benz_S-Class_on_Regent_Street_near_Piccadilly_Circus,_London_(Tripyana).jpg) | Mam16600 for Tripyana | CC BY 4.0 |
-| berline.jpg | [Škoda Superb IV IMG 4524](https://commons.wikimedia.org/wiki/File:%C5%A0koda_Superb_IV_IMG_4524.jpg) | Alexander Migl | CC BY-SA 4.0 |
-| berline-premium.jpg | [Mercedes-Benz E-Class 1X7A5838](https://commons.wikimedia.org/wiki/File:Mercedes-Benz_E-Class_1X7A5838.jpg) | Alexander Migl | CC BY-SA 4.0 |
-| van.jpg | [Mercedes-Benz V-Class 185650](https://commons.wikimedia.org/wiki/File:Mercedes-Benz_V-Class_185650.jpg) | Trop86 | CC0 |
+| berline.jpg | Image fournie par l’auteur du site (source et licence à documenter par lui) | — | — |
+| berline-premium.jpg | Image fournie par l’auteur du site (source et licence à documenter par lui) | — | — |
+| van.jpg | Image fournie par l’auteur du site (source et licence à documenter par lui) | — | — |
 | aeroport.jpg | [Zaventem Brussels Airport 04](https://commons.wikimedia.org/wiki/File:Zaventem_Brussels_Airport_04.jpg) | Ad Meskens | CC BY-SA 4.0 |
 | professionnel.jpg | [Mercedes-Benz V-Class interior, Belgravia](https://commons.wikimedia.org/wiki/File:Mercedes-Benz_V-Class_interior_with_cream_leather_seats,_Belgravia,_London_(Tripyana).jpg) | Mam16600 for Tripyana | CC BY 4.0 |
 | prive.jpg | [Brussels-Grand Place](https://commons.wikimedia.org/wiki/File:Brussels-Grand_Place.jpg) | Romaine | CC0 |
