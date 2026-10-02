@@ -1,19 +1,15 @@
 /**
- * Configuration centrale du site : textes, liens, véhicules, images.
- * Modifiez ce fichier pour adapter le contenu sans toucher aux composants.
+ * Configuration centrale du site : marque, liens, véhicules, images.
+ * Les textes affichés (français et anglais) sont dans src/i18n/messages.ts.
  */
 
 export const brand = {
   name: "Élyse Chauffeur",
-  tagline: "Vos déplacements en Belgique, en toute sérénité.",
-  demoNotice: "Démonstration : aucune réservation n’est envoyée.",
-  fictionalNotice: "Marque fictive — Site de démonstration.",
 };
 
 /** Laissez une URL vide ("") pour masquer automatiquement le lien correspondant. */
 export const developer = {
   name: "Yves Web Studio",
-  baseline: "Sites web, tableaux de bord et automatisation.",
   email: "yves.webstudio@gmail.com",
   githubUrl: "https://github.com/yves1-357",
   linkedinUrl: "https://www.linkedin.com/in/jean-yves-iradukunda-9a739138a/",
@@ -21,158 +17,53 @@ export const developer = {
 };
 
 export const navLinks = [
-  { href: "/#accueil", label: "Accueil" },
-  { href: "/#services", label: "Services" },
-  { href: "/#vehicules", label: "Véhicules" },
-  { href: "/#trajet", label: "Votre trajet" },
-];
+  { href: "/#accueil", id: "home" },
+  { href: "/#services", id: "services" },
+  { href: "/#vehicules", id: "vehicles" },
+  { href: "/#trajet", id: "trip" },
+] as const;
 
 export type ImageAsset = {
   src: string;
-  alt: string;
   width: number;
   height: number;
 };
 
 export const images = {
-  hero: {
-    src: "/images/hero.jpg",
-    alt: "Berline noire de prestige garée dans une rue animée d’une grande ville",
-    width: 1920,
-    height: 2560,
-  },
-  aeroport: {
-    src: "/images/aeroport.jpg",
-    alt: "Façade vitrée du terminal de l’aéroport de Bruxelles-Zaventem",
-    width: 1280,
-    height: 780,
-  },
-  professionnel: {
-    src: "/images/professionnel.jpg",
-    alt: "Intérieur d’un van de transport avec chauffeur, sièges en cuir clair",
-    width: 1280,
-    height: 960,
-  },
-  prive: {
-    src: "/images/prive.jpg",
-    alt: "Grand-Place de Bruxelles et ses façades dorées",
-    width: 1200,
-    height: 1600,
-  },
-  berline: {
-    src: "/images/berline.jpg",
-    alt: "Berline de catégorie standard vue de trois quarts avant",
-    width: 1280,
-    height: 852,
-  },
-  "berline-premium": {
-    src: "/images/berline-premium.jpg",
-    alt: "Berline premium de couleur sombre vue de trois quarts avant",
-    width: 1280,
-    height: 710,
-  },
-  van: {
-    src: "/images/van.jpg",
-    alt: "Van spacieux de sept places, vue de trois quarts avant",
-    width: 1280,
-    height: 989,
-  },
+  hero: { src: "/images/hero.jpg", width: 1920, height: 2560 },
+  aeroport: { src: "/images/aeroport.jpg", width: 1280, height: 780 },
+  professionnel: { src: "/images/professionnel.jpg", width: 1280, height: 960 },
+  prive: { src: "/images/prive.jpg", width: 1200, height: 1600 },
+  berline: { src: "/images/berline.jpg", width: 1280, height: 852 },
+  "berline-premium": { src: "/images/berline-premium.jpg", width: 1280, height: 710 },
+  van: { src: "/images/van.jpg", width: 1280, height: 989 },
 } satisfies Record<string, ImageAsset>;
 
 export type VehicleId = "berline" | "berline-premium" | "van";
 
 export type Vehicle = {
   id: VehicleId;
-  name: string;
-  description: string;
   passengers: number;
   luggage: number;
   image: ImageAsset;
 };
 
 export const vehicles: Vehicle[] = [
-  {
-    id: "berline",
-    name: "Berline",
-    description:
-      "Le choix simple et confortable pour un trajet quotidien, une gare ou un aéroport.",
-    passengers: 3,
-    luggage: 2,
-    image: images.berline,
-  },
-  {
-    id: "berline-premium",
-    name: "Berline premium",
-    description:
-      "Une finition plus soignée pour vos rendez-vous importants et vos arrivées en soirée.",
-    passengers: 3,
-    luggage: 2,
-    image: images["berline-premium"],
-  },
-  {
-    id: "van",
-    name: "Van",
-    description:
-      "De l’espace pour les groupes, les familles et les voyageurs avec beaucoup de bagages.",
-    passengers: 7,
-    luggage: 6,
-    image: images.van,
-  },
+  { id: "berline", passengers: 3, luggage: 2, image: images.berline },
+  { id: "berline-premium", passengers: 3, luggage: 2, image: images["berline-premium"] },
+  { id: "van", passengers: 7, luggage: 6, image: images.van },
 ];
 
 export const services = [
-  {
-    id: "aeroport",
-    title: "Transferts aéroport",
-    text: "Départs et arrivées à Bruxelles-Zaventem et à Charleroi. Vous indiquez votre trajet, nous préparons le reste.",
-    image: images.aeroport,
-  },
-  {
-    id: "professionnel",
-    title: "Déplacements professionnels",
-    text: "Rendez-vous, gares, salons : un trajet calme pour arriver prêt, ou préparer vos dossiers en route.",
-    image: images.professionnel,
-  },
-  {
-    id: "prive",
-    title: "Trajets privés et mise à disposition",
-    text: "Soirée, week-end, visite de la ville : un chauffeur à votre disposition, selon votre programme.",
-    image: images.prive,
-  },
-];
-
-export const serviceTypes = [
-  "Transfert aéroport",
-  "Déplacement professionnel",
-  "Trajet privé",
-  "Mise à disposition",
+  { id: "aeroport", image: images.aeroport },
+  { id: "professionnel", image: images.professionnel },
+  { id: "prive", image: images.prive },
 ] as const;
 
-/** Suggestions de destinations, purement indicatives. */
-export const destinationSuggestions = [
-  "Aéroport de Bruxelles-Zaventem",
-  "Aéroport de Charleroi",
-  "Gare de Bruxelles-Midi",
-  "Gare de Bruxelles-Central",
-  "Gare de Liège-Guillemins",
-  "Gare d’Anvers-Central",
-];
+export const serviceIds = ["airport", "business", "private", "hire"] as const;
+export type ServiceId = (typeof serviceIds)[number];
 
-export const faq = [
-  {
-    q: "Quels types de trajets sont présentés ?",
-    a: "Le site présente des transferts aéroport (Bruxelles-Zaventem et Charleroi), des déplacements professionnels, ainsi que des trajets privés et de la mise à disposition. Ce sont des exemples de ce que pourrait proposer une entreprise de transport avec chauffeur.",
-  },
-  {
-    q: "Comment choisir une catégorie de véhicule ?",
-    a: "Comptez d’abord le nombre de passagers et de bagages. La berline et la berline premium accueillent jusqu’à 3 passagers et 2 bagages, le van jusqu’à 7 passagers et 6 bagages. Le formulaire vérifie que le nombre de passagers est compatible avec la catégorie choisie.",
-  },
-  {
-    q: "Puis-je réserver réellement sur ce site ?",
-    a: "Non. Élyse Chauffeur est une marque fictive et ce site est une démonstration de développement web. Aucune réservation n’est envoyée, aucune donnée n’est stockée et aucun prix n’est calculé. Le formulaire sert uniquement à montrer le parcours qu’un vrai site pourrait offrir.",
-  },
-];
-
+export const tripOptionIds = ["siege-enfant", "bagages", "panneau", "arret"] as const;
 /** Crédits photographiques (affichés sur /credits et dans le README). */
 export const imageCredits = [
   {
