@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { brand, navLinks } from "@/config/site";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function Header() {
+  const { t, lang, setLang } = useI18n();
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -40,20 +42,41 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          <span className="sr-only">{open ? "Fermer le menu" : "Ouvrir le menu"}</span>
+          <span className="sr-only">{open ? t.header.closeMenu : t.header.openMenu}</span>
         </button>
+
+        <div className="lang-switch" role="group" aria-label={t.header.langLabel}>
+          <button
+            type="button"
+            lang="fr"
+            aria-pressed={lang === "fr"}
+            aria-label={t.header.langFr}
+            onClick={() => setLang("fr")}
+          >
+            FR
+          </button>
+          <button
+            type="button"
+            lang="en"
+            aria-pressed={lang === "en"}
+            aria-label={t.header.langEn}
+            onClick={() => setLang("en")}
+          >
+            EN
+          </button>
+        </div>
 
         <nav
           id="menu-principal"
           className="nav"
           data-open={open}
-          aria-label="Navigation principale"
+          aria-label={t.header.navLabel}
         >
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} onClick={() => setOpen(false)}>
-                  {link.label}
+                  {t.header.links[link.id]}
                 </Link>
               </li>
             ))}
@@ -63,7 +86,7 @@ export default function Header() {
             className="btn btn-gold nav-cta"
             onClick={() => setOpen(false)}
           >
-            Préparer mon trajet
+            {t.header.cta}
           </Link>
         </nav>
       </div>
